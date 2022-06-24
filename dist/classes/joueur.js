@@ -20,7 +20,7 @@ class Joueur {
         this.score += gobelet.get_valeur();
     }
     affiche_score() {
-        console.log(`Score de ${this.nom} : ${this.score}`);
+        console.log(`Score total : ${this.score}`);
     }
 }
 exports.Joueur = Joueur;

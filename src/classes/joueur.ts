@@ -26,6 +26,6 @@ export class Joueur implements Ijoueur {
     }
 
     public affiche_score(): void {
-        console.log(`Score de ${this.nom} : ${this.score}`)
+        console.log(`Score total : ${this.score}`)
     }
 }
