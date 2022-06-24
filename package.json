@@ -1,0 +1,25 @@
+{
+  "name": "jeudedes",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "tsc && node ./dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mxd838/jeuDeDes.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mxd838/jeuDeDes/issues"
+  },
+  "homepage": "https://github.com/mxd838/jeuDeDes#readme",
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  },
+  "devDependencies": {
+    "@types/node": "^18.0.0"
+  }
+}
