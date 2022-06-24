@@ -23,7 +23,6 @@ export class Joueur implements Ijoueur {
         gobelet.lancer()
         gobelet.afficher_score()
         this.score += gobelet.get_valeur()
-        // console.log(this.score)
     }
 
     public affiche_score(): void {

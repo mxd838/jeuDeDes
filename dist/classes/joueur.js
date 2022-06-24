@@ -18,7 +18,6 @@ class Joueur {
         gobelet.lancer();
         gobelet.afficher_score();
         this.score += gobelet.get_valeur();
-        // console.log(this.score)
     }
     affiche_score() {
         console.log(`Score de ${this.nom} : ${this.score}`);

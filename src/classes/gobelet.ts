@@ -19,16 +19,18 @@ export class Gobelet implements Igobelet {
 
     public lancer() : void {
         this.valeur = 0
-        // change la valeur des dés du gobelet
+        // get value for each dice
         for(let i = 0; i < this.des.length; i++){
             const nvDe = new De()
             nvDe.lancer()
             this.des[i] = nvDe.get_valeur()
+            // increase the value of the 'gobelet' with each dice value
             this.valeur += this.des[i]
         }
     }
 
     public afficher_score(): void {
+        // display the die results as a string
         console.log(`Lancer : ${this.des.join(' - ')}`)    
         console.log(`Score pour ce tour : ${this.valeur}`) 
     }

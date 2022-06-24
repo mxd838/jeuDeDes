@@ -12,19 +12,18 @@ class Partie {
         this.nb_joueurs = nb_joueurs;
     }
     initialiser() {
-        // push nom joueur dans tableau joueur
+        // Push the adequate number of Joueur objects into the array
         for (let i = 1; i <= this.nb_joueurs; i++) {
             const joueur = new joueur_1.Joueur(readline.question(`Nom du joueur ${i} : `));
             this.joueurs.push(joueur);
         }
     }
     lancer() {
-        // chaque jouer joue à tour de rôle pendant n tours
         for (let i = 1; i <= this.nb_tours; i++) {
             console.log(`\n=== TOUR ${i} ===\n`);
             for (let j = 0; j < this.nb_joueurs; j++) {
                 console.log(`\n--- ${this.joueurs[j].get_nom()} ---\n`);
-                // instancie un gobelet
+                // create a 'gobelet' object
                 const newGob = new gobelet_1.Gobelet(this.nb_des);
                 newGob.lancer();
                 this.joueurs[j].jouer(newGob);
@@ -33,9 +32,8 @@ class Partie {
         }
     }
     afficher_gagnant() {
-        // afficher les scores des joueurs
-        console.log('=== Scores finaux ===');
-        // boucle sur les scores pour deter le max
+        console.log('\n=== Scores finaux ===\n');
+        // Loop over the players to get the best score and its user name
         let max = this.joueurs[0].get_score();
         let gagnant = this.joueurs[0].get_nom();
         for (let i = 0; i < this.joueurs.length; i++) {
@@ -47,8 +45,8 @@ class Partie {
                 gagnant = nomJoueur;
             }
         }
-        // affiche le nom et le score du gagnant
-        console.log('=====================');
+        // display the winner and its score
+        console.log('\n=====================\n');
         console.log(`Le gagnant est ${gagnant} avec un score de ${max}`);
     }
 }
