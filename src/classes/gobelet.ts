@@ -1,4 +1,5 @@
 import { Igobelet } from "../interfaces/igobelet";
+import { De } from "./de";
 
 export class Gobelet implements Igobelet {
     public valeur : number = 0
@@ -16,15 +17,19 @@ export class Gobelet implements Igobelet {
         return this.valeur
     }
 
-    public lancer(values : number[]) : void {
+    public lancer() : void {
+        this.valeur = 0
         // change la valeur des dés du gobelet
         for(let i = 0; i < this.des.length; i++){
-
+            const nvDe = new De()
+            nvDe.lancer()
+            this.des[i] = nvDe.get_valeur()
+            this.valeur += this.des[i]
         }
-        // met à jour la valeur du gobelet
     }
 
     public afficher_score(): void {
-        
+        console.log(`Lancer : ${this.des.join(' - ')}`)    
+        console.log(`Score pour ce tour : ${this.valeur}`) 
     }
 }

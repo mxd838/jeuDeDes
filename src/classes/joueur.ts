@@ -1,4 +1,5 @@
 import { Ijoueur } from "../interfaces/ijoueur";
+import { Gobelet } from "./gobelet";
 
 export class Joueur implements Ijoueur {
     public nom : string = ''
@@ -17,9 +18,12 @@ export class Joueur implements Ijoueur {
         return this.score
     }
 
-    public jouer(gobelet : Object){
-        // lance le gobelet
-        // met à jour le score du joueur selon résultat
+    public jouer(gobelet : Gobelet){
+
+        gobelet.lancer()
+        gobelet.afficher_score()
+        this.score += gobelet.get_valeur()
+        // console.log(this.score)
     }
 
     public affiche_score(): void {
